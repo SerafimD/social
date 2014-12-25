@@ -9,13 +9,13 @@ default: &default
 
 production:
   <<: *default
-  database: social_production
+  database: dev_social_production
 
 test:
   <<: *default
-  database: social_test
+  database: dev_social_test
 
 development:
   <<: *default
-  database: social_development
+  database: dev_social_development
 
