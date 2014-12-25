@@ -3,8 +3,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
-  username: 
-  password: 
+  username: test
+  password: jrcfyf
   pool: 5
 
 production:
