@@ -1,0 +1,41 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: test
+  password:
+  pool: 5
+
+production:
+  <<: *default
+  database: dev_social_production
+
+test:
+  <<: *default
+  database: dev_social_test
+
+development:
+  <<: *default
+  database: dev_social_development
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password:
+  pool: 5
+
+development:
+  <<: *default
+  database: social_development
+
+test:
+  <<: *default
+  database: social_test
+
+production:
+  <<: *default
+  database: social_production
+
