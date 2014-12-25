@@ -3,19 +3,18 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
-  username: postgres
+  username: test
   password:
   pool: 5
 
-development:
+production:
   <<: *default
-  database: social_development
+  database: dev_social_production
 
 test:
   <<: *default
-  database: social_test
+  database: dev_social_test
 
-production:
+development:
   <<: *default
-  database: social_production
-
+  database: dev_social_development
