@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: test
+  password: jrcfyf
+  pool: 5
+
+production:
+  <<: *default
+  database: social_production
+
+test:
+  <<: *default
+  database: social_test
+
+development:
+  <<: *default
+  database: social_development
+
