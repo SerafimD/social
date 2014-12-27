@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20141227031330) do
   add_index "people", ["user_id"], name: "index_people_on_user_id", using: :btree
 
   create_table "user_relations", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_owner_id"
     t.integer  "user_rel_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "user_relations", ["owner_id"], name: "index_user_relations_on_owner_id", using: :btree
+  add_index "user_relations", ["user_owner_id"], name: "index_user_relations_on_user_owner_id", using: :btree
   add_index "user_relations", ["user_rel_id"], name: "index_user_relations_on_user_rel_id", using: :btree
 
   create_table "users", force: true do |t|
