@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20141227031330) do
   add_index "user_relations", ["user_rel_id"], name: "index_user_relations_on_user_rel_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "name",                                null: false
-    t.string   "password",                            null: false
+    t.string   "name",                   default: "", null: false
+    t.string   "password",               default: "", null: false
     t.integer  "kind",                                null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
