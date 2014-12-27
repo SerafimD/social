@@ -1,6 +1,6 @@
-Ссылка на схему БД
-схема в формате Workbench
-https://github.com/SerafimD/social/blob/master/db/social.mwb
+Схема БД db/scheme.png
+Описание задачи Project_ReadMe.doc
+
 
 Функционльность:
 1) Регистрация нового пользователя
