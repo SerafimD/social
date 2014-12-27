@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Community, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has valid factory" do
+    expect(FactoryGirl.build(:community)).to be_valid
+  end
+
+  it {should have_one(:user).class_name(User)}
 end
