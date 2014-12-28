@@ -16,3 +16,5 @@ public/*
 *.swp
 .idea
 db/social.mwb.bak
+*~
+*.*~
