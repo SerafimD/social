@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name, null:false, default: ""
       t.string :password, null:false, default: ""
-      t.integer :kind, null:false
+      t.integer :kind
 
 
       ## Database authenticatable
