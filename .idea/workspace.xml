@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="938927f7-7d87-4146-85a1-a3b96f7a87d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/profile.html.erb" afterPath="$PROJECT_DIR$/app/views/users/profile.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="social.iws" />
@@ -72,8 +70,8 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65779465" vertical-offset="590" max-vertical-offset="1674">
-              <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.8631179" vertical-offset="608" max-vertical-offset="1764">
+              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -499,7 +497,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420655874729</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="change user profile view, some minor fix">
+      <created>1420657943196</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1420657943196</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -571,7 +575,8 @@
     <MESSAGE value="some fix" />
     <MESSAGE value="devise fix&#10;database fix&#10;add SignOut" />
     <MESSAGE value="add user profile controller and view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add user profile controller and view" />
+    <MESSAGE value="change user profile view, some minor fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="change user profile view, some minor fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1109,8 +1114,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65779465" vertical-offset="590" max-vertical-offset="1674">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.8631179" vertical-offset="608" max-vertical-offset="1764">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
           <folding />
         </state>
       </provider>
