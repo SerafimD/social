@@ -8,7 +8,7 @@
     <%= link_to 'Изменить данные учетной записи', edit_user_registration_path %><br />
 
     <% if current_user.person? %>
-    <%= render "person"  %>   
+    <%= render "person"  %>       
     <% end %>
 
     <% if current_user.community? %>
