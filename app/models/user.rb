@@ -18,11 +18,20 @@ class User < ActiveRecord::Base
 
   def kind_name
     if self.kind == 1
-      'User'
+      'Person'
     elsif self.kind == 10
       'Community'
     else
       'Unknown kind'
     end
   end
+
+  def person?
+    self.kind == 1
+  end
+
+  def community?
+    self.kind == 10
+  end
+
 end
