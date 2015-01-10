@@ -9,6 +9,12 @@
   </div>
 
   <div class="field">
+  <%= f.label :kind %><br />
+  <%= f.radio_button :kind, '1', :checked => true %><%= f.label :kind, "User" %>
+  <%= f.radio_button :kind, '10' %><%= f.label :kind, "Community" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -20,6 +26,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>

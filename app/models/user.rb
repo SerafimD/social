@@ -15,4 +15,14 @@ class User < ActiveRecord::Base
   has_many :user_owner_relations, :class_name =>'UserRelation', :foreign_key =>"owner_id", :inverse_of => :user_owner, dependent: :destroy
   has_many :user_rel_relations, :class_name => 'UserRelation', :foreign_key =>"user_rel_id", :inverse_of => :user_rel, dependent: :destroy
   has_many :posts, dependent: :destroy
+
+  def kind_name
+    if self.kind == 1
+      'User'
+    elsif self.kind == 10
+      'Community'
+    else
+      'Unknown kind'
+    end
+  end
 end
