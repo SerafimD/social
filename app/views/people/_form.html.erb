@@ -1,0 +1,20 @@
+
+<%= form_for(@person) do |f| %>
+<%= render 'shared/people_errors' %>
+
+<div class="field">
+  <%= f.label :surename %> <br />
+  <%= f.text_field :surename, autofocus: true, autocomplete: "on"%>
+</div><br />
+
+
+<div class="field">
+  <%= f.label :date_of_birth %> <br />
+  <%= f.date_select :date_of_birth %>
+</div><br />
+
+<div class="actions">
+  <%= f.submit "Save" %>
+</div>
+
+<% end %>
