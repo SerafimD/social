@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  belongs_to :user, :foreign_key => "id"
+  belongs_to :user, :foreign_key => "user_id"
 
 
   def user

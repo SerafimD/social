@@ -37,8 +37,6 @@ RSpec.describe UsersController, :type => :controller do
 
   context 'when user logged in as person with person data' do
     let(:person) {FactoryGirl.create(:person)}
-#    let(:user){person.user}
-#    subject {FactoryGirl.create(:user_person)}
 
     before do
       sign_in person.user
@@ -71,5 +69,23 @@ RSpec.describe UsersController, :type => :controller do
       end
 
   end
+
+  context 'when user logged in as community with community data' do
+    let(:community) {FactoryGirl.create(:community)}
+
+    before do
+      sign_in community.user
+
+    end
+
+    describe "GET community_profile if user"
+      it 'redirect person#show view' do
+         get :show_profile
+         expect(response).to redirect_to  :controller => :communities, :action => :show, :id => community.id
+      end
+
+  end
+
+
 
 end
