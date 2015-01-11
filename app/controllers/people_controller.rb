@@ -36,8 +36,7 @@ class PeopleController < ApplicationController
       redirect_to url_for(:controller => :people, :action => :show, :id => @person.id)
     else
       render :new
-    end
-    d
+    end    
   end
 
 

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       if community == nil
         redirect_to  url_for(:controller => :communities, :action => :new)
       else
-        redirect_to url_for(:controller => :communities, action => :show, :id =>community.id)
+        redirect_to url_for(:controller => :communities, :action => :show, :id =>community.id)
       end
     else
       redirect_to  root_path

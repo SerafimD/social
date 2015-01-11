@@ -6,4 +6,6 @@
 <br />
 
 
-Community data here
+<span>Название: <%= current_user.name %> </span><br />
+<span>Тема: <%= @community.subject %> </span><br />
+<%= link_to 'Изменить данные сообщества', edit_community_path %><br/>
