@@ -1,6 +1,6 @@
 class CommunityMembership < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :community
+  belongs_to :user, :foreign_key => "user_id"
+  belongs_to :community, :foreign_key => "community_id"
 
   def user
     User.where(id: self.user_id).take

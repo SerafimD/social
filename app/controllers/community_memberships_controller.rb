@@ -26,8 +26,9 @@ before_action :find_current_community_membership, only: [:show, :destroy]
   end
 
   def destroy
+    community_id = @community_membership.community_id
     @community_membership.destroy
-    redirect_to :back
+    redirect_to url_for(:controller => :communities, :action => :show, :id => community_id)
   end
 
   private

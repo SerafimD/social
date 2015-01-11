@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :community_membership do
-    association :community
-    association :user
+    association :community, factory: :community
+    association :user, factory: :user
   end
 
 end

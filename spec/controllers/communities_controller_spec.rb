@@ -68,6 +68,8 @@ RSpec.describe CommunitiesController, :type => :controller do
    end
   end
 
+
+
   end
 
 end
