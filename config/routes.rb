@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :people
   resources :communities
+ # resorces  :users, only:[:show, :index]
   #get 'welcome/index'
   root 'welcome#index'
-  get 'users/profile', as: 'user_root'
+  get 'user_root' => 'users#show_profile'
 end

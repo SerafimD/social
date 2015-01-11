@@ -7,11 +7,8 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable
-#has_many :communications
-#has_many :posts
-  belongs_to :person, dependent: :destroy
-  belongs_to :community, dependent: :destroy
-  has_many :community, through: :community_memberships#, dependent: :delete_all
+  has_one :person, dependent: :destroy
+  has_one :community, dependent: :destroy
   has_many :community_memberships, dependent: :destroy
   has_many :user_owner_relations, :class_name =>'UserRelation', :foreign_key =>"user_owner_id", :inverse_of => :user_owner, dependent: :destroy
   has_many :user_rel_relations, :class_name => 'UserRelation', :foreign_key =>"user_rel_id", :inverse_of => :user_rel, dependent: :destroy

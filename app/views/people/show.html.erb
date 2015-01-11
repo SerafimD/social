@@ -1,0 +1,16 @@
+<% content_for :title do %>
+  Social: My profile
+<% end %>
+
+<% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.name %></span><br />
+    <span>Тип учетной записи: <%= current_user.kind_name %><br />
+    <%= link_to 'Изменить данные учетной записи', edit_user_registration_path %><br />
+
+ 
+
+    
+    </span>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
