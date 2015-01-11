@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   def kind_name
     if self.kind == 1
       'Person'
-    elsif self.kind == 10
+    elsif self.kind == 2
       'Community'
     else
       'Unknown kind'
@@ -29,7 +29,16 @@ class User < ActiveRecord::Base
   end
 
   def community?
-    self.kind == 10
+    self.kind == 2
   end
+
+#  def person_id
+#    person = Person.where(user_id: self.id).take
+#    if person == nil
+#      nil
+#    else
+#      person.id
+#    end
+# end
 
 end

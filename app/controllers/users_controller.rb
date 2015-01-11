@@ -5,9 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show_profile
+    if current_user == nil 
+      redirect_to new_user_session_path
+      return
+    end
+
     user = User.where(id: current_user.id).take
     if user == nil 
-      resirect_to root_path
+      redirect_to root_path
       return
     end
 
