@@ -27,6 +27,7 @@ before_action :find_current_community, only: [:show, :edit, :update]
 
 
   def new
+    authenticate_user!
     @community = Community.new
   end
 
@@ -50,6 +51,8 @@ before_action :find_current_community, only: [:show, :edit, :update]
 
 
   def find_current_community
+     authenticate_user!
+
      @community = Community.where(id: params[:id]).take 
   end
 end

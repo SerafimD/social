@@ -1,7 +1,6 @@
 class PeopleController < ApplicationController
   before_action :find_current_person, only: [:show, :edit, :update] 
 
-
   def index
     @people = Person.all
   end
@@ -26,6 +25,7 @@ class PeopleController < ApplicationController
   end
 
   def new
+    authenticate_user!
     @person = Person.new
   end
 
@@ -48,7 +48,8 @@ class PeopleController < ApplicationController
   end
 
   def find_current_person
-     @person = Person.where(id: params[:id]).take 
+     authenticate_user!
+     @person = Person.where(id: params[:id]).take
   end
 
 
