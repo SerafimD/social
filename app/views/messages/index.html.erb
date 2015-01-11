@@ -1,0 +1,27 @@
+<div class="row-fluid">
+
+
+<br>
+<p>Messages:</p>
+  <li>Полученные <%= @message_recieve %></li>
+<br>
+  <li>Отправленые <%= @message_send %></li>
+<br>
+
+
+<br>
+
+<%=form_tag(controller: "messages", action: "index", method: "post") do %>
+получатель
+<%= select_tag(:recive_id, options_for_select(@users.each_with_index.map {|x,i|[x.name,i+1]},1)) %>
+<br>
+сообщение
+<%= text_area_tag(:message, "qwe", size: "20x2") %>
+<br>
+<%= submit_tag("send") %>
+<% end %>
+
+</div>
+
+
+
