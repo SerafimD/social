@@ -15,3 +15,5 @@
 
 Хероку :
 https://rubybursa-social.herokuapp.com/
+
+необходимо запутитть миграции
