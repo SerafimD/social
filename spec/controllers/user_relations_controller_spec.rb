@@ -66,7 +66,6 @@ context 'when user not logged in' do
    end
 
   it "redirects to user_profile" do
-   user_id = @user_relation.user_owner_id
    delete :destroy, id: @user_relation
    expect(response).to redirect_to user_root_path 
   end

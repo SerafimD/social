@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :communities
   resources :community_memberships
   resources :user_relations
+  resources :posts
  # resorces  :users, only:[:show, :index]
   #get 'welcome/index'
   root 'welcome#index'
