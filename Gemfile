@@ -12,6 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -28,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #auth
 gem 'devise'
 gem 'cancancan', '~> 1.7'
+#gem 'will_paginate','~>3.0.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

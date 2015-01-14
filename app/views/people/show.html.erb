@@ -1,0 +1,14 @@
+<% content_for :title do %>
+  Social: My profile
+<% end %>
+
+<%= render 'shared/user_info' %>
+<br />
+
+
+<span>Имя: <%= current_user.name %> </span><br />
+<span>Фамилия: <%= @person.surename %> </span><br />
+<span>Дата рождения: <%= @person.date_of_birth %> </span><br />
+<%= link_to 'Изменить данные пользователя', edit_person_path %><br/>
+
+
