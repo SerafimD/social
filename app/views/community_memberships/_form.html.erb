@@ -1,0 +1,14 @@
+
+<%= form_for(@community_membership) do |f| %>
+
+<div class="field">
+  <%= f.label :user_id %> <br />
+  <%= f.text_field :user_id, autofocus: true, autocomplete: "off"%>
+</div><br />
+
+
+<div class="actions">
+  <%= f.submit "Save" %>
+</div>
+
+<% end %>

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :community do
     subject {Faker::Lorem.sentence}
-    association :user
+    association :user, factory: :user_community
   end
 
 end

@@ -5,5 +5,5 @@ RSpec.describe Community, :type => :model do
     expect(FactoryGirl.build(:community)).to be_valid
   end
 
-  it {should have_one(:user).class_name(User)}
+  it {should belong_to(:user).class_name(User)}
 end
