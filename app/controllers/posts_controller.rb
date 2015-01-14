@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 before_action :find_current_post, only: [:show, :edit, :update, :destroy] 
+before_filter :authenticate_user!
 
  def index
  
@@ -10,22 +11,18 @@ before_action :find_current_post, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
-    if @post == nil
-      redirect_to url_for(:controller => :posts, :action => :new)
-      return
-    end 
+    render :new unless @post
   end
 
   def update
     if @post.update(post_params)
-      redirect_to url_for(:controller => :posts, :action => :show, :id => @post.id)
+      render :show
     else
       render :edit
     end
   end
 
   def new
-    authenticate_user!
     @post = Post.new
   end
 
@@ -33,7 +30,7 @@ before_action :find_current_post, only: [:show, :edit, :update, :destroy]
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to url_for(:controller => :posts, :action => :show, :id => @post.id)
+      render :show
     else
       render :new
     end    
@@ -52,7 +49,6 @@ before_action :find_current_post, only: [:show, :edit, :update, :destroy]
   end
 
   def find_current_post
-     authenticate_user!
      @post = Post.where(id: params[:id]).take
   end
 

@@ -1,5 +1,6 @@
 class CommunitiesController < ApplicationController
 before_action :find_current_community, only: [:show, :edit, :update] 
+before_filter :authenticate_user!
 
   def index
     @communities = Community.all
@@ -10,16 +11,13 @@ before_action :find_current_community, only: [:show, :edit, :update]
   end
 
   def edit
-    if @community == nil
-      redirect_to url_for(:controller => :communities, :action => :new)
-      return
-    end 
+    render :new  unless @community
   end
 
 
   def update
     if @community.update(community_params)
-      redirect_to url_for(:controller => :communities, :action => :show, :id => @community.id)
+      render :show 
     else
       render :edit
     end
@@ -27,7 +25,6 @@ before_action :find_current_community, only: [:show, :edit, :update]
 
 
   def new
-    authenticate_user!
     @community = Community.new
   end
 
@@ -35,7 +32,7 @@ before_action :find_current_community, only: [:show, :edit, :update]
     @community = Community.new(community_params)
     @community.user_id = current_user.id
     if @community.save
-      redirect_to url_for(:controller => :communities, :action => :show, :id => @community.id)
+      render :show 
     else
       render :new
     end
@@ -51,8 +48,6 @@ before_action :find_current_community, only: [:show, :edit, :update]
 
 
   def find_current_community
-     authenticate_user!
-
      @community = Community.where(id: params[:id]).take 
   end
 end

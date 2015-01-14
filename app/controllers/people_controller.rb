@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
-  before_action :find_current_person, only: [:show, :edit, :update] 
+before_action :find_current_person, only: [:show, :edit, :update] 
+before_filter :authenticate_user!
 
   def index
     @people = Person.all
@@ -10,22 +11,18 @@ class PeopleController < ApplicationController
   end
 
   def edit
-    if @person == nil
-      redirect_to url_for(:controller => :people, :action => :new)
-      return
-    end 
+    render :new unless @person
   end
 
   def update
     if @person.update(person_params)
-      redirect_to url_for(:controller => :people, :action => :show, :id => @person.id)
+      render :show
     else
       render :edit
     end
   end
 
   def new
-    authenticate_user!
     @person = Person.new
   end
 
@@ -33,7 +30,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     @person.user_id = current_user.id
     if @person.save
-      redirect_to url_for(:controller => :people, :action => :show, :id => @person.id)
+      render :show
     else
       render :new
     end    
@@ -48,7 +45,6 @@ class PeopleController < ApplicationController
   end
 
   def find_current_person
-     authenticate_user!
      @person = Person.where(id: params[:id]).take
   end
 

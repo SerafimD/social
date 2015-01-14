@@ -1,5 +1,6 @@
 class CommunityMembershipsController < ApplicationController
 before_action :find_current_community_membership, only: [:show, :destroy] 
+before_filter :authenticate_user!
 
   def index
     
@@ -11,7 +12,6 @@ before_action :find_current_community_membership, only: [:show, :destroy]
 
 
   def new
-    authenticate_user!
     @community_membership = CommunityMembership.new
   end
 
@@ -19,7 +19,7 @@ before_action :find_current_community_membership, only: [:show, :destroy]
     @community_membership = CommunityMembership.new(community_params)
     @community_membership.community_id = current_user.id
     if @community_membership.save
-      redirect_to url_for(:controller => :community_memberships, :action => :show, :id => @community_membership.id)
+      render :show
     else
       render :new
     end
@@ -40,8 +40,6 @@ before_action :find_current_community_membership, only: [:show, :destroy]
 
 
   def find_current_community_membership
-     authenticate_user!
-
      @community_membership = CommunityMembership.where(id: params[:id]).take 
   end
 end

@@ -69,29 +69,6 @@ RSpec.describe PeopleController, :type => :controller do
   end
 
   end
-=begin
- context 'when user logged in as person, but no person data' do
-    subject { FactoryGirl.create(:person) }
-
-    before do
-      sign_in subject.user
-
-    end
-    describe "POST #create" do
-     context "with valid attributes" do
-     it "creates new object" do
-       expect{post :create, person: FactoryGirl.attributes_for(:person)}.to change(Person, :count).by(1)
-     end
-
-     it "redirects to profile path" do
-      post :create, person: FactoryGirl.attributes_for(:person)
-      expect(response).to redirect_to  :controller => :people, :action => :show, :id => person.id #how to find id?
-     end
-    end
-
-end
-end
-=end
 
 
 end
