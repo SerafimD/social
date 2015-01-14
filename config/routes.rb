@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   resources :community_memberships
   resources :user_relations
   resources :posts
- # resorces  :users, only:[:show, :index]
+
+  get 'messages' => 'messages#index'
+  post 'messages' => 'messages#index'
+  
   #get 'welcome/index'
   root 'welcome#index'
   get 'user_root' => 'users#show_profile'
+  #get 'users/profile', as: 'user_root'
 end

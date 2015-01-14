@@ -1,26 +1,26 @@
 class UsersController < ApplicationController
- 
+
   def profile
   end
 
   def show_profile
-    if current_user == nil 
-      redirect_to new_user_session_path 
+    if current_user == nil
+      redirect_to new_user_session_path
       return
     end
 
     user = User.where(id: current_user.id).take
-    if user == nil 
-      redirect_to root_path 
+    if user == nil
+      redirect_to root_path
       return
     end
 
     if user.person?
       person = Person.where(user_id: user.id).take
       if person == nil
-      redirect_to  url_for(:controller => :people, :action => :new)
+        redirect_to  url_for(:controller => :people, :action => :new)
       else
-      redirect_to  url_for(:controller => :people, :action => :show, :id => person.id)
+        redirect_to  url_for(:controller => :people, :action => :show, :id => person.id)
       end
 
     elsif user.community?
@@ -32,9 +32,9 @@ class UsersController < ApplicationController
       end
     else
       redirect_to  root_path
-    end 
+    end
 
-   
+
   end
 
 end

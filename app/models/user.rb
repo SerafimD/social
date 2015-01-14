@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   has_many :user_owner_relations, :class_name =>'UserRelation', :foreign_key =>"user_owner_id", :inverse_of => :user_owner, dependent: :destroy
   has_many :user_rel_relations, :class_name => 'UserRelation', :foreign_key =>"user_rel_id", :inverse_of => :user_rel, dependent: :destroy
   has_many :posts, dependent: :destroy
+#add messages
+  has_many :send_messages, class_name: "Message", foreign_key: "user_id_to"
+  has_many :recieved_messages, class_name: "Message", foreign_key: "user_id_from"
 
   def kind_name
     if self.kind == 1
