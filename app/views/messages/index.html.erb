@@ -1,6 +1,8 @@
 <div class="row-fluid">
 
 
+<%=@test%>
+
 <br>
 <p>Messages:</p>
   <li>Полученные <%= @message_recieve %></li>
@@ -13,7 +15,7 @@
 
 <%=form_tag(controller: "messages", action: "index", method: "post") do %>
 получатель
-<%= select_tag(:recive_id, options_for_select(@users.each_with_index.map {|x,i|[x.name,i+1]},1)) %>
+<%= select_tag(:recive_id, options_for_select(@users.each_with_index.map {|x,i|[x.name,x.id]},1)) %>
 <br>
 сообщение
 <%= text_area_tag(:message, "qwe", size: "20x2") %>
