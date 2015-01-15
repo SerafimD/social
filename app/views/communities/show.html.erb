@@ -1,0 +1,11 @@
+<% content_for :title do %>
+  Social: Community profile
+<% end %>
+
+<%= render 'shared/user_info' %>
+<br />
+
+
+<span>Название: <%= current_user.name %> </span><br />
+<span>Тема: <%= @community.subject %> </span><br />
+<%= link_to 'Изменить данные сообщества', edit_community_path %><br/>

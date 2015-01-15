@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227075558) do
+ActiveRecord::Schema.define(version: 20150111015602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20141227075558) do
 
   add_index "community_memberships", ["community_id"], name: "index_community_memberships_on_community_id", using: :btree
   add_index "community_memberships", ["user_id"], name: "index_community_memberships_on_user_id", using: :btree
+
+  create_table "messages", force: true do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id_to"
+    t.integer  "user_id_from"
+    t.text     "message_text"
+  end
 
   create_table "people", force: true do |t|
     t.string   "surename"
@@ -79,6 +87,9 @@ ActiveRecord::Schema.define(version: 20141227075558) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "post_id"
+    t.integer  "message_to"
+    t.integer  "message_from"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

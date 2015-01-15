@@ -1,0 +1,14 @@
+
+<%= form_for(@user_relation) do |f| %>
+
+<div class="field">
+  <%= f.label :user_rel_id %> <br />
+  <%= f.text_field :user_rel_id, autofocus: true, autocomplete: "off"%>
+</div><br />
+
+
+<div class="actions">
+  <%= f.submit "Save" %>
+</div>
+
+<% end %>

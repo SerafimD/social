@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user_relation do
-    association :user_owner
-    association :user_rel
+    association :user_owner, factory: :user
+    association :user_rel, factory: :user
   end
 
 
