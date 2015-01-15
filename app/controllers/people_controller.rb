@@ -30,7 +30,7 @@ before_filter :authenticate_user!
     @person = Person.new(person_params)
     @person.user_id = current_user.id
     if @person.save
-      render :show
+      redirect_to url_for(:controller => :people, :action => :show, :id => @person.id)
     else
       render :new
     end    
